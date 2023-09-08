@@ -17,15 +17,16 @@ def update_matrix3x3(matrix3x3, row, column, value):
 
 ## check the winner
 def winner_check(matrix3x3, value):
-    for x in range(3):
-        if (matrix3x3[x][0] == matrix3x3[x][1] == matrix3x3[x][2] == value) or (matrix3x3[0][x] == matrix3x3[1][x] == matrix3x3[2][x] == value):
+    # check rows and columns
+    for i in range(3):
+        if (matrix3x3[i][0] == matrix3x3[i][1] == matrix3x3[i][2] == value) or (matrix3x3[0][i] == matrix3x3[1][i] == matrix3x3[2][i] == value):
             return True
-    for y in range(3):
-        if (matrix3x3[y][0] == matrix3x3[y][1] == matrix3x3[y][2] == value) or (matrix3x3[0][y] == matrix3x3[1][y] == matrix3x3[2][y] == value):
-            return True
-    for x in range(0, 3, 2):
-        if matrix3x3[x][0] == matrix3x3[1][1] == matrix3x3[2-x][2]:
-            return True
+
+    # check diagonals
+    if (matrix3x3[0][0] == matrix3x3[1][1] == matrix3x3[2][2] == value) or (matrix3x3[0][2] == matrix3x3[1][1] == matrix3x3[2][0] == value):
+        return True
+    
+    # if no winning
     return False
 
 def play():
