@@ -9,3 +9,6 @@ class TicTacToeView:
             print(" | ".join(row))
             print("-" * 9)
             
+    def display_winner(self, value):
+        print(f"Player {value} is the winner!")
+        
