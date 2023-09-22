@@ -12,3 +12,5 @@ class TicTacToeView:
     def display_winner(self, value):
         print(f"Player {value} is the winner!")
         
+    def display_invalid_move(self):
+        print('Invalid move. Please enter different coordinates.')
