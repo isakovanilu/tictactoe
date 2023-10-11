@@ -11,5 +11,9 @@ class TicTacToeModel:
     
     def _check_rows(self, value):
         return any(all(cell == value for cell in row) for row in self.matrix3x3)
+    
+    def _check_columns(self, value):
+        return any(all(self.matrix3x3[row][col] == value for row in range(3)) for col in range(3))
+
 
 
