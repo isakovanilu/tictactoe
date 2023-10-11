@@ -15,5 +15,9 @@ class TicTacToeModel:
     def _check_columns(self, value):
         return any(all(self.matrix3x3[row][col] == value for row in range(3)) for col in range(3))
 
+    def _check_diagonals(self, value):
+        return all(self.matrix3x3[i][i] == value for i in range(3)) or \
+               all(self.matrix3x3[i][2 - i] == value for i in range(3))
 
 
+    
