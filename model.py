@@ -8,16 +8,8 @@ class TicTacToeModel:
             self.matrix3x3[row][column] = value
             return True
         return False
+    
+    def _check_rows(self, value):
+        return any(all(cell == value for cell in row) for row in self.matrix3x3)
 
-    def winner_check(self, value):
-        for i in range(3):
-            if (self.matrix3x3[i][0] == self.matrix3x3[i][1] == self.matrix3x3[i][2] == value) or \
-               (self.matrix3x3[0][i] == self.matrix3x3[1][i] == self.matrix3x3[2][i] == value):
-                return True
 
-        # check diagonals
-        if (self.matrix3x3[0][0] == self.matrix3x3[1][1] == self.matrix3x3[2][2] == value) or \
-           (self.matrix3x3[0][2] == self.matrix3x3[1][1] == self.matrix3x3[2][0] == value):
-            return True
-
-        return False
