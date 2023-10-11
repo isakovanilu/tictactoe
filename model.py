@@ -19,5 +19,7 @@ class TicTacToeModel:
         return all(self.matrix3x3[i][i] == value for i in range(3)) or \
                all(self.matrix3x3[i][2 - i] == value for i in range(3))
 
+    def winner_check(self, value):
+        return self._check_rows(value) or self._check_columns(value) or self._check_diagonals(value)
 
     
